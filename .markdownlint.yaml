@@ -1,0 +1,100 @@
+heading-increment: true
+heading-style:
+  style: atx
+ul-style:
+  style: dash
+list-indent: true
+ul-indent:
+  indent: 2
+  start_indent: 2
+  start_indented: false
+no-trailing-spaces:
+  br_spaces: 2
+  list_item_empty_lines: true
+  strict: false
+no-hard-tabs:
+  code_blocks: true
+  ignore_code_languages:
+    - makefile
+  spaces_per_tab: 2
+no-reversed-links: true
+no-multiple-blanks:
+  maximum: 1
+line-length: false
+commands-show-output: true
+no-missing-space-atx: true
+no-multiple-space-atx: true
+blanks-around-headings:
+  lines_above: 1
+  lines_below: 1
+heading-start-left: true
+no-duplicate-heading:
+  siblings_only: true
+single-title: true
+no-trailing-punctuation: &punctuation
+  punctuation: .,!?<>[]/|\
+no-multiple-space-blockquote: true
+no-blanks-blockquote: true
+ol-prefix:
+  style: ordered
+list-marker-space:
+  ol_multi: 1
+  ol_single: 1
+  ul_multi: 1
+  ul_single: 1
+blanks-around-fences: true
+blanks-around-lists: true
+no-inline-html:
+  allowed_elements:
+    - div
+no-bare-urls: true
+hr-style:
+  style: ---
+no-emphasis-as-heading: *punctuation
+no-space-in-emphasis: true
+no-space-in-code: true
+no-space-in-links: true
+fenced-code-language:
+  allowed_languages:
+    - javascript
+    - json
+  language_only: true
+first-line-heading:
+  front_matter_title: ^\\s*title\\s*[:=]
+  level: 1
+no-empty-links: true
+required-headings:
+  headings:
+    - + # Heading is expected to be here
+    - "## Description"
+    - "## Installation"
+    - "## Features"
+    - "## Screenshots"
+  match_case: true
+proper-names:
+  code_blocks: false
+  html_elements: false
+  names:
+    - Fish
+    - JavaScript
+    - Go
+    - YAML
+    - JSON
+no-alt-text: true
+code-block-style:
+  style: fenced
+single-trailing-newline: true
+emphasis-style:
+  style: asterisk
+strong-style:
+  style: asterisk
+link-fragments: false
+reference-links-images:
+  shortcut_syntax: false
+link-image-style:
+  autolink: false
+  collapsed: false
+  inline: true
+  full: true
+  shortcut: false
+  url_inline: false
