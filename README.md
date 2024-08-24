@@ -12,9 +12,9 @@ Installation steps are explained [here][installation].
 
 ## Features
 
-- [x] Snippets for subcommands
-- [x] Snippets for environment variables
-- [x] Snippets for templates
+- [x] Snippets for subcommands, e.g. for `choose` subcommand
+- [x] Snippets for environment variables, e.g. for `GUM_CHOOSE_ORDERED` variable
+- [x] Snippets for templates, e.g. for `Bold` template
 
 ## Screenshots
 
