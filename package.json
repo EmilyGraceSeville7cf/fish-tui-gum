@@ -5,6 +5,7 @@
     "version": "1.0.0",
     "publisher": "EmilyGraceSeville7cf",
     "icon": "logo.jpg",
+    "license": "MIT",
     "repository": {
         "type": "git",
         "url": "https://github.com/EmilyGraceSeville7cf/fish-tui-gum.git"
@@ -13,12 +14,14 @@
         "vscode": "^1.92.0"
     },
     "categories": [
-        "Other"
+        "Other",
+        "Programming Languages",
+        "Snippets"
     ],
     "activationEvents": [
         "onLanguage:fish"
     ],
-    "main": "./extension.js",
+    "main": "./src/extension.js",
     "contributes": {
         "commands": [
             {
@@ -33,12 +36,15 @@
         "test": "vscode-test"
     },
     "devDependencies": {
-        "@types/vscode": "^1.92.0",
         "@types/mocha": "^10.0.7",
         "@types/node": "20.x",
-        "eslint": "^8.57.0",
-        "typescript": "^5.4.5",
+        "@types/vscode": "^1.92.0",
         "@vscode/test-cli": "^0.0.9",
-        "@vscode/test-electron": "^2.4.0"
+        "@vscode/test-electron": "^2.4.0",
+        "eslint": "^8.57.0",
+        "typescript": "^5.4.5"
+    },
+    "dependencies": {
+        "@sinclair/typebox": "^0.33.7"
     }
 }
