@@ -46,5 +46,10 @@
     },
     "dependencies": {
         "@sinclair/typebox": "^0.33.7"
+    },
+    "prettier": {
+        "trailingComma": "none",
+        "tabWidth": 4,
+        "semi": false
     }
 }

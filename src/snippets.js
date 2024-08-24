@@ -1,7 +1,8 @@
 const types = require("./types")
 const vscode = require("vscode")
 
-const baseUrl = "https://github.com/charmbracelet/gum/tree/main?tab=readme-ov-file"
+const baseUrl =
+    "https://github.com/charmbracelet/gum/tree/main?tab=readme-ov-file"
 
 /**
  * @type {Map<string, string>}
@@ -9,7 +10,8 @@ const baseUrl = "https://github.com/charmbracelet/gum/tree/main?tab=readme-ov-fi
 const documentationUrls = new Map()
 documentationUrls.set("gum", "https://github.com/charmbracelet/gum")
 
-for (const command of ["choose",
+for (const command of [
+    "choose",
     "confirm",
     "file",
     "filter",
@@ -21,12 +23,14 @@ for (const command of ["choose",
     "style",
     "table",
     "write",
-    "log"])
+    "log"
+]) {
     documentationUrls.set(command, `${baseUrl}#${command}`)
+}
 
 /**
-  * @type {Array<types.SnippetDefinition>}
-  */
+ * @type {Array<types.SnippetDefinition>}
+ */
 const snippets = [
     {
         identifier: "color",
@@ -61,7 +65,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Maintain the order of the selected options",
-            url: documentationUrls.get("choose"),
+            url: documentationUrls.get("choose")
         },
         options: [
             {
@@ -80,12 +84,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Height of the list",
-            url: documentationUrls.get("choose"),
+            url: documentationUrls.get("choose")
         },
         options: [
             {
                 identifiers: {
-                    long: "height",
+                    long: "height"
                 },
                 kind: {
                     baseKind: "integer"
@@ -99,12 +103,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Prefix to show on item that corresponds to the cursor position",
-            url: documentationUrls.get("choose"),
+            url: documentationUrls.get("choose")
         },
         options: [
             {
                 identifiers: {
-                    long: "cursor",
+                    long: "cursor"
                 },
                 kind: {
                     baseKind: "string"
@@ -118,12 +122,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Show help keybinds",
-            url: documentationUrls.get("choose"),
+            url: documentationUrls.get("choose")
         },
         options: [
             {
                 identifiers: {
-                    long: "show-help",
+                    long: "show-help"
                 }
             },
             {
@@ -139,12 +143,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Header value",
-            url: documentationUrls.get("choose"),
+            url: documentationUrls.get("choose")
         },
         options: [
             {
                 identifiers: {
-                    long: "header",
+                    long: "header"
                 },
                 kind: {
                     baseKind: "string"
@@ -158,12 +162,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Prefix to show on the cursor item",
-            url: documentationUrls.get("choose"),
+            url: documentationUrls.get("choose")
         },
         options: [
             {
                 identifiers: {
-                    long: "cursor-prefix",
+                    long: "cursor-prefix"
                 },
                 kind: {
                     baseKind: "string"
@@ -177,12 +181,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Prefix to show on selected items",
-            url: documentationUrls.get("choose"),
+            url: documentationUrls.get("choose")
         },
         options: [
             {
                 identifiers: {
-                    long: "selected-prefix",
+                    long: "selected-prefix"
                 },
                 kind: {
                     baseKind: "string"
@@ -196,12 +200,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Prefix to show on unselected items",
-            url: documentationUrls.get("choose"),
+            url: documentationUrls.get("choose")
         },
         options: [
             {
                 identifiers: {
-                    long: "unselected-prefix",
+                    long: "unselected-prefix"
                 },
                 kind: {
                     baseKind: "string"
@@ -215,12 +219,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Options that should start as selected",
-            url: documentationUrls.get("choose"),
+            url: documentationUrls.get("choose")
         },
         options: [
             {
                 identifiers: {
-                    long: "selected",
+                    long: "selected"
                 },
                 kind: {
                     baseKind: "integer",
@@ -236,12 +240,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Timeout until choose returns selected element",
-            url: documentationUrls.get("choose"),
+            url: documentationUrls.get("choose")
         },
         options: [
             {
                 identifiers: {
-                    long: "timeout",
+                    long: "timeout"
                 },
                 kind: {
                     baseKind: "integer"
@@ -255,12 +259,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("choose"),
+            url: documentationUrls.get("choose")
         },
         options: [
             {
                 identifiers: {
-                    long: "cursor.foreground",
+                    long: "cursor.foreground"
                 },
                 kind: {
                     baseKind: "color"
@@ -274,12 +278,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("choose"),
+            url: documentationUrls.get("choose")
         },
         options: [
             {
                 identifiers: {
-                    long: "header.foreground",
+                    long: "header.foreground"
                 },
                 kind: {
                     baseKind: "color"
@@ -293,12 +297,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("choose"),
+            url: documentationUrls.get("choose")
         },
         options: [
             {
                 identifiers: {
-                    long: "item.foreground",
+                    long: "item.foreground"
                 },
                 kind: {
                     baseKind: "color"
@@ -312,12 +316,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("choose"),
+            url: documentationUrls.get("choose")
         },
         options: [
             {
                 identifiers: {
-                    long: "selected.foreground",
+                    long: "selected.foreground"
                 },
                 kind: {
                     baseKind: "color"
@@ -340,12 +344,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Show help key binds",
-            url: documentationUrls.get("confirm"),
+            url: documentationUrls.get("confirm")
         },
         options: [
             {
                 identifiers: {
-                    long: "show-help",
+                    long: "show-help"
                 }
             },
             {
@@ -361,12 +365,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Timeout until confirm returns selected value or default if provided",
-            url: documentationUrls.get("confirm"),
+            url: documentationUrls.get("confirm")
         },
         options: [
             {
                 identifiers: {
-                    long: "timeout",
+                    long: "timeout"
                 },
                 kind: {
                     baseKind: "integer"
@@ -380,12 +384,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("confirm"),
+            url: documentationUrls.get("confirm")
         },
         options: [
             {
                 identifiers: {
-                    long: "prompt.foreground",
+                    long: "prompt.foreground"
                 },
                 kind: {
                     baseKind: "color"
@@ -399,12 +403,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("confirm"),
+            url: documentationUrls.get("confirm")
         },
         options: [
             {
                 identifiers: {
-                    long: "selected.foreground",
+                    long: "selected.foreground"
                 },
                 kind: {
                     baseKind: "color"
@@ -418,12 +422,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("confirm"),
+            url: documentationUrls.get("confirm")
         },
         options: [
             {
                 identifiers: {
-                    long: "unselected.foreground",
+                    long: "unselected.foreground"
                 },
                 kind: {
                     baseKind: "color"
@@ -446,7 +450,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "The cursor character",
-            url: documentationUrls.get("file"),
+            url: documentationUrls.get("file")
         },
         options: [
             {
@@ -466,7 +470,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Show hidden and 'dot' files",
-            url: documentationUrls.get("file"),
+            url: documentationUrls.get("file")
         },
         options: [
             {
@@ -483,12 +487,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Allow files selection",
-            url: documentationUrls.get("file"),
+            url: documentationUrls.get("file")
         },
         options: [
             {
                 identifiers: {
-                    long: "file",
+                    long: "file"
                 }
             }
         ]
@@ -499,7 +503,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Allow directories selection",
-            url: documentationUrls.get("file"),
+            url: documentationUrls.get("file")
         },
         options: [
             {
@@ -515,12 +519,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Show help key binds",
-            url: documentationUrls.get("file"),
+            url: documentationUrls.get("file")
         },
         options: [
             {
                 identifiers: {
-                    long: "show-help",
+                    long: "show-help"
                 }
             },
             {
@@ -536,12 +540,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Maximum number of files to display",
-            url: documentationUrls.get("file"),
+            url: documentationUrls.get("file")
         },
         options: [
             {
                 identifiers: {
-                    long: "height",
+                    long: "height"
                 },
                 kind: {
                     baseKind: "integer"
@@ -555,12 +559,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Timeout until command aborts without a selection",
-            url: documentationUrls.get("file"),
+            url: documentationUrls.get("file")
         },
         options: [
             {
                 identifiers: {
-                    long: "timeout",
+                    long: "timeout"
                 },
                 kind: {
                     baseKind: "integer"
@@ -574,12 +578,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("file"),
+            url: documentationUrls.get("file")
         },
         options: [
             {
                 identifiers: {
-                    long: "cursor.foreground",
+                    long: "cursor.foreground"
                 },
                 kind: {
                     baseKind: "color"
@@ -593,12 +597,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("file"),
+            url: documentationUrls.get("file")
         },
         options: [
             {
                 identifiers: {
-                    long: "symlink.foreground",
+                    long: "symlink.foreground"
                 },
                 kind: {
                     baseKind: "color"
@@ -612,12 +616,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("file"),
+            url: documentationUrls.get("file")
         },
         options: [
             {
                 identifiers: {
-                    long: "directory.foreground",
+                    long: "directory.foreground"
                 },
                 kind: {
                     baseKind: "color"
@@ -631,12 +635,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("file"),
+            url: documentationUrls.get("file")
         },
         options: [
             {
                 identifiers: {
-                    long: "file.foreground",
+                    long: "file.foreground"
                 },
                 kind: {
                     baseKind: "color"
@@ -650,12 +654,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("file"),
+            url: documentationUrls.get("file")
         },
         options: [
             {
                 identifiers: {
-                    long: "permissions.foreground",
+                    long: "permissions.foreground"
                 },
                 kind: {
                     baseKind: "color"
@@ -669,12 +673,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("file"),
+            url: documentationUrls.get("file")
         },
         options: [
             {
                 identifiers: {
-                    long: "selected.foreground",
+                    long: "selected.foreground"
                 },
                 kind: {
                     baseKind: "color"
@@ -688,12 +692,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("file"),
+            url: documentationUrls.get("file")
         },
         options: [
             {
                 identifiers: {
-                    long: "file-size.foreground",
+                    long: "file-size.foreground"
                 },
                 kind: {
                     baseKind: "color"
@@ -703,7 +707,8 @@ const snippets = [
     },
     {
         identifier: "filter",
-        content: "gum filter --header=${1|\",'|}${2:message}$1 < ${3:command which output to show}",
+        content:
+            "gum filter --header=${1|\",'|}${2:message}$1 < ${3:command which output to show}",
         kind: vscode.CompletionItemKind.Function,
         documentation: {
             text: "Choose one or more items with fuzzy search",
@@ -716,16 +721,18 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Character for selection",
-            url: documentationUrls.get("filter"),
+            url: documentationUrls.get("filter")
         },
-        options: [{
-            identifiers: {
-                long: "indicator",
-            },
-            kind: {
-                baseKind: "string"
+        options: [
+            {
+                identifiers: {
+                    long: "indicator"
+                },
+                kind: {
+                    baseKind: "string"
+                }
             }
-        }]
+        ]
     },
     {
         identifier: "GUM_FILTER_SELECTED_PREFIX",
@@ -733,12 +740,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Character to indicate selected items",
-            url: documentationUrls.get("filter"),
+            url: documentationUrls.get("filter")
         },
         options: [
             {
                 identifiers: {
-                    long: "selected-prefix",
+                    long: "selected-prefix"
                 },
                 kind: {
                     baseKind: "string"
@@ -752,12 +759,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Character to indicate unselected items",
-            url: documentationUrls.get("filter"),
+            url: documentationUrls.get("filter")
         },
         options: [
             {
                 identifiers: {
-                    long: "unselected-prefix",
+                    long: "unselected-prefix"
                 },
                 kind: {
                     baseKind: "string"
@@ -771,12 +778,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Header value",
-            url: documentationUrls.get("filter"),
+            url: documentationUrls.get("filter")
         },
         options: [
             {
                 identifiers: {
-                    long: "header",
+                    long: "header"
                 },
                 kind: {
                     baseKind: "string"
@@ -790,12 +797,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Placeholder value",
-            url: documentationUrls.get("filter"),
+            url: documentationUrls.get("filter")
         },
         options: [
             {
                 identifiers: {
-                    long: "placeholder",
+                    long: "placeholder"
                 },
                 kind: {
                     baseKind: "string"
@@ -809,12 +816,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Prompt to display",
-            url: documentationUrls.get("filter"),
+            url: documentationUrls.get("filter")
         },
         options: [
             {
                 identifiers: {
-                    long: "prompt",
+                    long: "prompt"
                 },
                 kind: {
                     baseKind: "string"
@@ -828,12 +835,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Input width",
-            url: documentationUrls.get("filter"),
+            url: documentationUrls.get("filter")
         },
         options: [
             {
                 identifiers: {
-                    long: "width",
+                    long: "width"
                 },
                 kind: {
                     baseKind: "integer"
@@ -847,12 +854,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Input height",
-            url: documentationUrls.get("filter"),
+            url: documentationUrls.get("filter")
         },
         options: [
             {
                 identifiers: {
-                    long: "height",
+                    long: "height"
                 },
                 kind: {
                     baseKind: "integer"
@@ -866,12 +873,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Initial filter value",
-            url: documentationUrls.get("filter"),
+            url: documentationUrls.get("filter")
         },
         options: [
             {
                 identifiers: {
-                    long: "value",
+                    long: "value"
                 },
                 kind: {
                     baseKind: "string"
@@ -885,12 +892,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Display from the bottom of the screen",
-            url: documentationUrls.get("filter"),
+            url: documentationUrls.get("filter")
         },
         options: [
             {
                 identifiers: {
-                    long: "reverse",
+                    long: "reverse"
                 }
             }
         ]
@@ -901,17 +908,17 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Enable fuzzy matching",
-            url: documentationUrls.get("filter"),
+            url: documentationUrls.get("filter")
         },
         options: [
             {
                 identifiers: {
-                    long: "fuzzy",
+                    long: "fuzzy"
                 }
             },
             {
                 identifiers: {
-                    long: "no-fuzzy",
+                    long: "no-fuzzy"
                 }
             }
         ]
@@ -922,17 +929,17 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Sort the results",
-            url: documentationUrls.get("filter"),
+            url: documentationUrls.get("filter")
         },
         options: [
             {
                 identifiers: {
-                    long: "sort",
+                    long: "sort"
                 }
             },
             {
                 identifiers: {
-                    long: "no-sort",
+                    long: "no-sort"
                 }
             }
         ]
@@ -943,12 +950,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Timeout until filter command aborts",
-            url: documentationUrls.get("filter"),
+            url: documentationUrls.get("filter")
         },
         options: [
             {
                 identifiers: {
-                    long: "timeout",
+                    long: "timeout"
                 },
                 kind: {
                     baseKind: "integer"
@@ -962,12 +969,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("filter"),
+            url: documentationUrls.get("filter")
         },
         options: [
             {
                 identifiers: {
-                    long: "indicator.foreground",
+                    long: "indicator.foreground"
                 },
                 kind: {
                     baseKind: "color"
@@ -981,12 +988,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("filter"),
+            url: documentationUrls.get("filter")
         },
         options: [
             {
                 identifiers: {
-                    long: "selected-indicator.foreground",
+                    long: "selected-indicator.foreground"
                 },
                 kind: {
                     baseKind: "color"
@@ -1000,12 +1007,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("filter"),
+            url: documentationUrls.get("filter")
         },
         options: [
             {
                 identifiers: {
-                    long: "unselected-prefix.foreground",
+                    long: "unselected-prefix.foreground"
                 },
                 kind: {
                     baseKind: "color"
@@ -1019,12 +1026,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("filter"),
+            url: documentationUrls.get("filter")
         },
         options: [
             {
                 identifiers: {
-                    long: "header.foreground",
+                    long: "header.foreground"
                 },
                 kind: {
                     baseKind: "color"
@@ -1038,12 +1045,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("filter"),
+            url: documentationUrls.get("filter")
         },
         options: [
             {
                 identifiers: {
-                    long: "text.foreground",
+                    long: "text.foreground"
                 },
                 kind: {
                     baseKind: "color"
@@ -1057,12 +1064,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("filter"),
+            url: documentationUrls.get("filter")
         },
         options: [
             {
                 identifiers: {
-                    long: "cursor-text.foreground",
+                    long: "cursor-text.foreground"
                 },
                 kind: {
                     baseKind: "color"
@@ -1076,12 +1083,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("filter"),
+            url: documentationUrls.get("filter")
         },
         options: [
             {
                 identifiers: {
-                    long: "match.foreground",
+                    long: "match.foreground"
                 },
                 kind: {
                     baseKind: "color"
@@ -1095,12 +1102,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("filter"),
+            url: documentationUrls.get("filter")
         },
         options: [
             {
                 identifiers: {
-                    long: "prompt.foreground",
+                    long: "prompt.foreground"
                 },
                 kind: {
                     baseKind: "color"
@@ -1114,12 +1121,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("filter"),
+            url: documentationUrls.get("filter")
         },
         options: [
             {
                 identifiers: {
-                    long: "placeholder.foreground",
+                    long: "placeholder.foreground"
                 },
                 kind: {
                     baseKind: "color"
@@ -1142,12 +1149,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Glamour theme to use for markdown",
-            url: documentationUrls.get("format"),
+            url: documentationUrls.get("format")
         },
         options: [
             {
                 identifiers: {
-                    long: "theme",
+                    long: "theme"
                 },
                 kind: {
                     baseKind: "string"
@@ -1161,13 +1168,13 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Programming language to parse code",
-            url: documentationUrls.get("format"),
+            url: documentationUrls.get("format")
         },
         options: [
             {
                 identifiers: {
                     long: "language",
-                    short: "l",
+                    short: "l"
                 },
                 kind: {
                     baseKind: "string"
@@ -1181,13 +1188,13 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Format to use",
-            url: documentationUrls.get("format"),
+            url: documentationUrls.get("format")
         },
         options: [
             {
                 identifiers: {
                     long: "type",
-                    short: "t",
+                    short: "t"
                 },
                 kind: {
                     baseKind: "enumeration"
@@ -1269,7 +1276,8 @@ const snippets = [
     },
     {
         identifier: "Color",
-        content: "Color ${1:hexadecimal-foreground} ${2:hexadecimal-background} ${3:text}",
+        content:
+            "Color ${1:hexadecimal-foreground} ${2:hexadecimal-background} ${3:text}",
         kind: vscode.CompletionItemKind.Keyword,
         documentation: {
             text: "A colored text",
@@ -1309,12 +1317,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Placeholder value",
-            url: documentationUrls.get("input"),
+            url: documentationUrls.get("input")
         },
         options: [
             {
                 identifiers: {
-                    long: "placeholder",
+                    long: "placeholder"
                 },
                 kind: {
                     baseKind: "string"
@@ -1328,12 +1336,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Prompt to display",
-            url: documentationUrls.get("input"),
+            url: documentationUrls.get("input")
         },
         options: [
             {
                 identifiers: {
-                    long: "prompt",
+                    long: "prompt"
                 },
                 kind: {
                     baseKind: "string"
@@ -1347,12 +1355,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Cursor mode",
-            url: documentationUrls.get("input"),
+            url: documentationUrls.get("input")
         },
         options: [
             {
                 identifiers: {
-                    long: "cursor.mode",
+                    long: "cursor.mode"
                 },
                 kind: {
                     baseKind: "enumeration"
@@ -1366,12 +1374,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Input width",
-            url: documentationUrls.get("input"),
+            url: documentationUrls.get("input")
         },
         options: [
             {
                 identifiers: {
-                    long: "width",
+                    long: "width"
                 },
                 kind: {
                     baseKind: "integer"
@@ -1385,12 +1393,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Show help keybinds",
-            url: documentationUrls.get("input"),
+            url: documentationUrls.get("input")
         },
         options: [
             {
                 identifiers: {
-                    long: "show-help",
+                    long: "show-help"
                 }
             },
             {
@@ -1406,12 +1414,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Header value",
-            url: documentationUrls.get("input"),
+            url: documentationUrls.get("input")
         },
         options: [
             {
                 identifiers: {
-                    long: "header",
+                    long: "header"
                 },
                 kind: {
                     baseKind: "string"
@@ -1425,12 +1433,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Timeout until input aborts",
-            url: documentationUrls.get("input"),
+            url: documentationUrls.get("input")
         },
         options: [
             {
                 identifiers: {
-                    long: "timeout",
+                    long: "timeout"
                 },
                 kind: {
                     baseKind: "integer"
@@ -1444,12 +1452,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("input"),
+            url: documentationUrls.get("input")
         },
         options: [
             {
                 identifiers: {
-                    long: "prompt.foreground",
+                    long: "prompt.foreground"
                 },
                 kind: {
                     baseKind: "color"
@@ -1463,12 +1471,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("input"),
+            url: documentationUrls.get("input")
         },
         options: [
             {
                 identifiers: {
-                    long: "placeholder.foreground",
+                    long: "placeholder.foreground"
                 },
                 kind: {
                     baseKind: "color"
@@ -1482,12 +1490,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("input"),
+            url: documentationUrls.get("input")
         },
         options: [
             {
                 identifiers: {
-                    long: "cursor.foreground",
+                    long: "cursor.foreground"
                 },
                 kind: {
                     baseKind: "color"
@@ -1501,12 +1509,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("input"),
+            url: documentationUrls.get("input")
         },
         options: [
             {
                 identifiers: {
-                    long: "header.foreground",
+                    long: "header.foreground"
                 },
                 kind: {
                     baseKind: "color"
@@ -1538,12 +1546,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Timeout until command exits",
-            url: documentationUrls.get("pager"),
+            url: documentationUrls.get("pager")
         },
         options: [
             {
                 identifiers: {
-                    long: "timeout",
+                    long: "timeout"
                 },
                 kind: {
                     baseKind: "integer"
@@ -1557,12 +1565,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("pager"),
+            url: documentationUrls.get("pager")
         },
         options: [
             {
                 identifiers: {
-                    long: "foreground",
+                    long: "foreground"
                 },
                 kind: {
                     baseKind: "color"
@@ -1576,12 +1584,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("pager"),
+            url: documentationUrls.get("pager")
         },
         options: [
             {
                 identifiers: {
-                    long: "help.foreground",
+                    long: "help.foreground"
                 },
                 kind: {
                     baseKind: "color"
@@ -1595,12 +1603,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("pager"),
+            url: documentationUrls.get("pager")
         },
         options: [
             {
                 identifiers: {
-                    long: "line-number.foreground",
+                    long: "line-number.foreground"
                 },
                 kind: {
                     baseKind: "color"
@@ -1614,12 +1622,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("pager"),
+            url: documentationUrls.get("pager")
         },
         options: [
             {
                 identifiers: {
-                    long: "match.foreground",
+                    long: "match.foreground"
                 },
                 kind: {
                     baseKind: "color"
@@ -1633,12 +1641,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("pager"),
+            url: documentationUrls.get("pager")
         },
         options: [
             {
                 identifiers: {
-                    long: "match-highlight.foreground",
+                    long: "match-highlight.foreground"
                 },
                 kind: {
                     baseKind: "color"
@@ -1648,7 +1656,8 @@ const snippets = [
     },
     {
         identifier: "spin",
-        content: "gum spin --title=${1|\",'|}${2:message}$1 -- ${3:command which to wait for}",
+        content:
+            "gum spin --title=${1|\",'|}${2:message}$1 -- ${3:command which to wait for}",
         kind: vscode.CompletionItemKind.Function,
         documentation: {
             text: "Wait a command for while showing the loading screen",
@@ -1661,12 +1670,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Show or pipe output of command during execution",
-            url: documentationUrls.get("spin"),
+            url: documentationUrls.get("spin")
         },
         options: [
             {
                 identifiers: {
-                    long: "show-input",
+                    long: "show-input"
                 }
             }
         ]
@@ -1677,12 +1686,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Show output of command only if the command fails",
-            url: documentationUrls.get("spin"),
+            url: documentationUrls.get("spin")
         },
         options: [
             {
                 identifiers: {
-                    long: "show-error",
+                    long: "show-error"
                 }
             }
         ]
@@ -1693,7 +1702,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Spinner type",
-            url: documentationUrls.get("spin"),
+            url: documentationUrls.get("spin")
         },
         options: [
             {
@@ -1713,7 +1722,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Text to display to user while spinning",
-            url: documentationUrls.get("spin"),
+            url: documentationUrls.get("spin")
         },
         options: [
             {
@@ -1732,7 +1741,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Alignment of spinner with regard to the title",
-            url: documentationUrls.get("spin"),
+            url: documentationUrls.get("spin")
         },
         options: [
             {
@@ -1752,7 +1761,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Timeout until spin command aborts",
-            url: documentationUrls.get("spin"),
+            url: documentationUrls.get("spin")
         },
         options: [
             {
@@ -1771,7 +1780,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("spin"),
+            url: documentationUrls.get("spin")
         },
         options: [
             {
@@ -1790,7 +1799,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("spin"),
+            url: documentationUrls.get("spin")
         },
         options: [
             {
@@ -1819,7 +1828,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("style"),
+            url: documentationUrls.get("style")
         },
         options: [
             {
@@ -1838,7 +1847,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Background color",
-            url: documentationUrls.get("style"),
+            url: documentationUrls.get("style")
         },
         options: [
             {
@@ -1857,7 +1866,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Border style",
-            url: documentationUrls.get("style"),
+            url: documentationUrls.get("style")
         },
         options: [
             {
@@ -1876,7 +1885,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Border background color",
-            url: documentationUrls.get("style"),
+            url: documentationUrls.get("style")
         },
         options: [
             {
@@ -1895,7 +1904,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Border foreground color",
-            url: documentationUrls.get("style"),
+            url: documentationUrls.get("style")
         },
         options: [
             {
@@ -1914,7 +1923,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Border alignment",
-            url: documentationUrls.get("style"),
+            url: documentationUrls.get("style")
         },
         options: [
             {
@@ -1933,7 +1942,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "The height",
-            url: documentationUrls.get("style"),
+            url: documentationUrls.get("style")
         },
         options: [
             {
@@ -1952,7 +1961,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "The width",
-            url: documentationUrls.get("style"),
+            url: documentationUrls.get("style")
         },
         options: [
             {
@@ -1971,7 +1980,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "The margin",
-            url: documentationUrls.get("style"),
+            url: documentationUrls.get("style")
         },
         options: [
             {
@@ -1992,7 +2001,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "The padding",
-            url: documentationUrls.get("style"),
+            url: documentationUrls.get("style")
         },
         options: [
             {
@@ -2013,7 +2022,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Bold text",
-            url: documentationUrls.get("style"),
+            url: documentationUrls.get("style")
         },
         options: [
             {
@@ -2029,7 +2038,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Faint text",
-            url: documentationUrls.get("style"),
+            url: documentationUrls.get("style")
         },
         options: [
             {
@@ -2045,7 +2054,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Italic text",
-            url: documentationUrls.get("style"),
+            url: documentationUrls.get("style")
         },
         options: [
             {
@@ -2061,7 +2070,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Strikethrough text",
-            url: documentationUrls.get("style"),
+            url: documentationUrls.get("style")
         },
         options: [
             {
@@ -2077,7 +2086,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Underline text",
-            url: documentationUrls.get("style"),
+            url: documentationUrls.get("style")
         },
         options: [
             {
@@ -2102,7 +2111,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("table"),
+            url: documentationUrls.get("table")
         },
         options: [
             {
@@ -2121,7 +2130,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("table"),
+            url: documentationUrls.get("table")
         },
         options: [
             {
@@ -2140,7 +2149,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("table"),
+            url: documentationUrls.get("table")
         },
         options: [
             {
@@ -2159,7 +2168,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("table"),
+            url: documentationUrls.get("table")
         },
         options: [
             {
@@ -2187,7 +2196,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Text area width",
-            url: documentationUrls.get("write"),
+            url: documentationUrls.get("write")
         },
         options: [
             {
@@ -2206,7 +2215,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Text area height",
-            url: documentationUrls.get("write"),
+            url: documentationUrls.get("write")
         },
         options: [
             {
@@ -2225,7 +2234,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Header value",
-            url: documentationUrls.get("write"),
+            url: documentationUrls.get("write")
         },
         options: [
             {
@@ -2244,7 +2253,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Placeholder value",
-            url: documentationUrls.get("write"),
+            url: documentationUrls.get("write")
         },
         options: [
             {
@@ -2263,7 +2272,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Prompt to display",
-            url: documentationUrls.get("write"),
+            url: documentationUrls.get("write")
         },
         options: [
             {
@@ -2282,7 +2291,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Show cursor line",
-            url: documentationUrls.get("write"),
+            url: documentationUrls.get("write")
         },
         options: [
             {
@@ -2298,7 +2307,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Show line numbers",
-            url: documentationUrls.get("write"),
+            url: documentationUrls.get("write")
         },
         options: [
             {
@@ -2314,7 +2323,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Initial value",
-            url: documentationUrls.get("write"),
+            url: documentationUrls.get("write")
         },
         options: [
             {
@@ -2333,12 +2342,12 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Show help key binds",
-            url: documentationUrls.get("write"),
+            url: documentationUrls.get("write")
         },
         options: [
             {
                 identifiers: {
-                    long: "show-help",
+                    long: "show-help"
                 }
             },
             {
@@ -2354,7 +2363,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Cursor mode",
-            url: documentationUrls.get("write"),
+            url: documentationUrls.get("write")
         },
         options: [
             {
@@ -2373,7 +2382,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("write"),
+            url: documentationUrls.get("write")
         },
         options: [
             {
@@ -2392,7 +2401,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("write"),
+            url: documentationUrls.get("write")
         },
         options: [
             {
@@ -2411,7 +2420,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("write"),
+            url: documentationUrls.get("write")
         },
         options: [
             {
@@ -2430,7 +2439,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("write"),
+            url: documentationUrls.get("write")
         },
         options: [
             {
@@ -2449,7 +2458,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("write"),
+            url: documentationUrls.get("write")
         },
         options: [
             {
@@ -2468,7 +2477,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("write"),
+            url: documentationUrls.get("write")
         },
         options: [
             {
@@ -2487,7 +2496,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("write"),
+            url: documentationUrls.get("write")
         },
         options: [
             {
@@ -2506,7 +2515,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("write"),
+            url: documentationUrls.get("write")
         },
         options: [
             {
@@ -2525,7 +2534,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("write"),
+            url: documentationUrls.get("write")
         },
         options: [
             {
@@ -2553,7 +2562,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("format"),
+            url: documentationUrls.get("format")
         },
         options: [
             {
@@ -2572,7 +2581,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("format"),
+            url: documentationUrls.get("format")
         },
         options: [
             {
@@ -2591,7 +2600,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("format"),
+            url: documentationUrls.get("format")
         },
         options: [
             {
@@ -2610,7 +2619,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("format"),
+            url: documentationUrls.get("format")
         },
         options: [
             {
@@ -2629,7 +2638,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("format"),
+            url: documentationUrls.get("format")
         },
         options: [
             {
@@ -2648,7 +2657,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("format"),
+            url: documentationUrls.get("format")
         },
         options: [
             {
@@ -2667,7 +2676,7 @@ const snippets = [
         kind: vscode.CompletionItemKind.Variable,
         documentation: {
             text: "Foreground color",
-            url: documentationUrls.get("format"),
+            url: documentationUrls.get("format")
         },
         options: [
             {
@@ -2679,9 +2688,26 @@ const snippets = [
                 }
             }
         ]
-    },
+    }
 ]
 
-module.exports = {
-    snippets
-}
+const completionItems = snippets.reduce((prev, snippet) => {
+    if (snippet.kind === vscode.CompletionItemKind.Variable) {
+        prev.push(
+            types.Snippet.fromRaw({
+                ...snippet,
+                identifier: `set-${snippet.identifier}`,
+                content: `set --export ${snippet.content}`,
+                documentation: {
+                    text: `${snippet.documentation.text} (set via \`set\`)`,
+                    url: snippet.documentation.url
+                }
+            }).toCompletion()
+        )
+    }
+    prev.push(types.Snippet.fromRaw(snippet).toCompletion())
+
+    return prev
+}, [])
+
+module.exports = completionItems
