@@ -9,7 +9,13 @@ suite("Value kind creation tests", () => {
         assert.throws(
             // @ts-ignore
             () => new extension.ValueKind(incorrect),
-            "Exception expected for incorrect `baseKind` parameter"
+            "Exception expected for incorrect `baseKind` parameter with incorrect type"
+        )
+
+        assert.throws(
+            // @ts-ignore
+            () => new extension.ValueKind(""),
+            "Exception expected for incorrect `baseKind` parameter with incorrect value"
         )
     })
 
@@ -18,22 +24,33 @@ suite("Value kind creation tests", () => {
             () =>
                 // @ts-ignore
                 new extension.ValueKind("string", incorrect),
-            "Exception expected for incorrect `isArray` parameter"
+            "Exception expected for incorrect `isArray` parameter with incorrect type"
+        )
+
+        assert.throws(
+            () =>
+                // @ts-ignore
+                new extension.ValueKind("string", false),
+            "Exception expected for incorrect `isArray` parameter with incorrect value"
         )
     })
 
     test("Fail with incorrect `separator` parameter", () => {
         assert.throws(
             () =>
-                // @ts-ignore
-                new extension.ValueKind("string", true, incorrect),
-            "Exception expected for incorrect `separator` parameter"
+                new extension.ValueKind("string",
+                    true,
+                    // @ts-ignore
+                    incorrect),
+            "Exception expected for incorrect `separator` parameter with incorrect type"
         )
 
         assert.throws(
             () =>
-                new extension.ValueKind("string", false, ","),
-            "Exception expected for existing `separator` parameter when `isArray` parameter is false"
+                new extension.ValueKind("string",
+                    true,
+                    ",,"),
+            "Exception expected for incorrect `separator` parameter with incorrect value"
         )
     })
 
@@ -47,7 +64,7 @@ suite("Value kind creation tests", () => {
 
         assert.deepEqual(
             extension.ValueKind.fromRaw(base),
-            new extension.ValueKind("string"),
+            new extension.ValueKind(base.baseKind),
             messages.fromRaw
         )
 
@@ -59,7 +76,7 @@ suite("Value kind creation tests", () => {
 
         assert.deepEqual(
             extension.ValueKind.fromRaw(base),
-            new extension.ValueKind("string",
+            new extension.ValueKind(base.baseKind,
                 true,
                 ","),
             messages.fromRaw
@@ -69,17 +86,26 @@ suite("Value kind creation tests", () => {
 
 suite("Value kind to string conversion tests", () => {
     test("Succeed with correct `toString` result", () => {
+        /**
+         * @type {extension.ValueKindDefinition}
+         */
+        let base = {
+            baseKind: "string",
+            isArray: true,
+            separator: ","
+        }
+
         assert.equal(
-            new extension.ValueKind("string").toString(),
-            "string",
+            new extension.ValueKind(base.baseKind).toString(),
+            base.baseKind,
             messages.toString
         )
 
         assert.equal(
-            new extension.ValueKind("string",
-                true,
-                ",").toString(),
-            "string,string...",
+            new extension.ValueKind(base.baseKind,
+                base.isArray,
+                base.separator).toString(),
+            `${base.baseKind}${base.separator}${base.baseKind}...`,
             messages.toString
         )
     })
