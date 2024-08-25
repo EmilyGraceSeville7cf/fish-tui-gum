@@ -1,18 +1,18 @@
 const typebox = require("@sinclair/typebox")
 
 const valueKind = Object.freeze({
-    baseKind: typebox.Union([typebox.Enum({
+    baseKind: typebox.Enum({
         boolean: "boolean",
         string: "string",
         integer: "integer",
         color: "color",
         enumeration: "enumeration"
-    }), typebox.Undefined()]),
-    isArray: typebox.Union([typebox.Boolean(), typebox.Undefined()]),
-    separator: typebox.Union([typebox.Optional(typebox.String({
+    }),
+    isArray: typebox.Union([typebox.Literal(true), typebox.Undefined()]),
+    separator: typebox.Union([typebox.String({
         minLength: 1,
         maxLength: 1
-    })),
+    }),
     typebox.Undefined()])
 })
 
