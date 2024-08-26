@@ -8,29 +8,43 @@ const incorrect = Symbol("incorrect value")
 suite("Snippet creation tests", () => {
     test("Fail with incorrect `identifier` parameter", () => {
         assert.throws(
-            // @ts-ignore
+            // @ts-expect-error
             () => new extension.Snippet(incorrect),
-            "Exception expected for incorrect `identifier` parameter"
+            "Exception expected for incorrect `identifier` parameter with incorrect type"
+        )
+
+        assert.throws(
+            // @ts-expect-error
+            () => new extension.Snippet(""),
+            "Exception expected for incorrect `identifier` parameter with incorrect value"
         )
     })
 
     test("Fail with incorrect `content` parameter", () => {
         assert.throws(
-            // @ts-ignore
+            // @ts-expect-error
             () => new extension.Snippet("write",
                 incorrect),
-            "Exception expected for incorrect `content` parameter"
+            "Exception expected for incorrect `content` parameter with incorrect type"
+        )
+
+        assert.throws(
+            () =>
+                // @ts-expect-error
+                new extension.Snippet("write", ""),
+            "Exception expected for incorrect `content` parameter with incorrect value"
         )
     })
 
     test("Fail with incorrect `documentation` parameter", () => {
         assert.throws(
-            // @ts-ignore
-            () => new extension.Snippet("write",
-                "write",
-                vscode.CompletionItemKind.Function,
-                incorrect),
-            "Exception expected for incorrect `documentation` parameter"
+            () =>
+                // @ts-expect-error
+                new extension.Snippet("write",
+                    "write",
+                    vscode.CompletionItemKind.Function,
+                    incorrect),
+            "Exception expected for incorrect `documentation` parameter with incorrect type"
         )
     })
 
@@ -41,9 +55,26 @@ suite("Snippet creation tests", () => {
                 vscode.CompletionItemKind.Function,
                 new extension.Documentation("Help.",
                     "https://test"),
-                // @ts-ignore
+                // @ts-expect-error
                 incorrect),
-            "Exception expected for incorrect `options` parameter"
+            "Exception expected for incorrect `options` parameter with incorrect type"
+        )
+
+        assert.throws(
+            () => new extension.Snippet("write",
+                "write",
+                vscode.CompletionItemKind.Function,
+                new extension.Documentation("Help.",
+                    "https://test"),
+                [
+                    new extension.Option({
+                        long: "s1"
+                    }),
+                    new extension.Option({
+                        long: "s1"
+                    })
+                ]),
+            "Exception expected for incorrect `options` parameter with incorrect value"
         )
     })
 
@@ -110,37 +141,37 @@ suite("Snippet conversion tests", () => {
         /**
          * @type {vscode.SnippetString}
          */
-        // @ts-ignore
+        // @ts-expect-error
         const insertText = completion.insertText
 
         /**
          * @type {vscode.MarkdownString}
          */
-        // @ts-ignore
+        // @ts-expect-error
         const documentation = completion.documentation
 
         assert.equal(
             completion.label,
             snippet.identifier,
-            "Correctly formatted label expected for object"
+            "Expected correctly formatted label expected for object"
         )
 
         assert.equal(
             insertText.value,
             snippet.content,
-            "Correctly formatted content expected for object"
+            "Expected correctly formatted content expected for object"
         )
 
         assert.equal(
             completion.kind,
             snippet.kind,
-            "Correctly selected kind expected for object"
+            "Expected correctly selected kind expected for object"
         )
 
         assert.equal(
             documentation.value,
             snippet.documentationWithOptions,
-            "Correctly formatted kind expected for object"
+            "Expected correctly formatted kind expected for object"
         )
     })
 })
