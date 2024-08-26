@@ -7,27 +7,48 @@ const incorrect = Symbol("incorrect value")
 suite("Option creation tests", () => {
     test("Fail with incorrect `identifiers` parameter", () => {
         const message = "Exception expected for incorrect `identifiers` parameter"
+        const messageForType = `${message} for type`
+        const messageForValue = `${message} for value`
 
         assert.throws(
-            // @ts-ignore
+            // @ts-expect-error
             () => new extension.Option(incorrect),
-            message
+            messageForType
+        )
+
+        assert.throws(
+            () => new extension.Option({}),
+            messageForType
         )
 
         assert.throws(
             () => new extension.Option({
-                // @ts-ignore
+                // @ts-expect-error
                 short: incorrect
             }),
-            message
+            messageForType
         )
 
         assert.throws(
             () => new extension.Option({
-                // @ts-ignore
+                // @ts-expect-error
                 long: incorrect
             }),
-            message
+            messageForType
+        )
+
+        assert.throws(
+            () => new extension.Option({
+                short: ""
+            }),
+            messageForValue
+        )
+
+        assert.throws(
+            () => new extension.Option({
+                long: ""
+            }),
+            messageForValue
         )
     })
 
@@ -36,7 +57,7 @@ suite("Option creation tests", () => {
             () => new extension.Option({
                 short: "s"
             },
-                // @ts-ignore
+                // @ts-expect-error
                 incorrect
             ),
             "Exception expected for incorrect `kind` parameter"
@@ -66,7 +87,10 @@ suite("Option creation tests", () => {
 
         assert.deepEqual(
             extension.Option.fromRaw(optionData),
-            new extension.Option(optionData.identifiers, extension.ValueKind.fromRaw(optionData.kind)),
+            new extension.Option(
+                optionData.identifiers,
+                extension.ValueKind.fromRaw(optionData.kind)
+            ),
             messages.fromRaw
         )
     })
