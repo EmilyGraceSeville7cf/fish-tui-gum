@@ -7,13 +7,13 @@ const incorrect = Symbol("incorrect value")
 suite("Value kind creation tests", () => {
     test("Fail with incorrect `baseKind` parameter", () => {
         assert.throws(
-            // @ts-ignore
+            // @ts-expect-error
             () => new extension.ValueKind(incorrect),
             "Exception expected for incorrect `baseKind` parameter with incorrect type"
         )
 
         assert.throws(
-            // @ts-ignore
+            // @ts-expect-error
             () => new extension.ValueKind(""),
             "Exception expected for incorrect `baseKind` parameter with incorrect value"
         )
@@ -22,14 +22,13 @@ suite("Value kind creation tests", () => {
     test("Fail with incorrect `isArray` parameter", () => {
         assert.throws(
             () =>
-                // @ts-ignore
+                // @ts-expect-error
                 new extension.ValueKind("string", incorrect),
             "Exception expected for incorrect `isArray` parameter with incorrect type"
         )
 
         assert.throws(
             () =>
-                // @ts-ignore
                 new extension.ValueKind("string", false),
             "Exception expected for incorrect `isArray` parameter with incorrect value"
         )
@@ -40,7 +39,7 @@ suite("Value kind creation tests", () => {
             () =>
                 new extension.ValueKind("string",
                     true,
-                    // @ts-ignore
+                    // @ts-expect-error
                     incorrect),
             "Exception expected for incorrect `separator` parameter with incorrect type"
         )
