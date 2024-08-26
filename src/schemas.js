@@ -27,6 +27,8 @@ const option = Object.freeze({
             minLength: 1,
             pattern: "^[A-z][A-z0-9\-.]+$"
         })
+    }, {
+        minProperties: 1
     }))
 })
 
@@ -58,7 +60,9 @@ const snippet = Object.freeze({
         minLength: 1,
     }),
     options: typebox.Union([
-        typebox.Array(typebox.Any()),
+        typebox.Array(typebox.Any(), {
+            uniqueItems: true
+        }),
         typebox.Undefined()
     ])
 })
