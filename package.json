@@ -11,8 +11,7 @@
         "url": "https://github.com/EmilyGraceSeville7cf/fish-tui-gum.git"
     },
     "engines": {
-        "vscode": "^1.92.0",
-        "node": ">=20.11.1"
+        "vscode": "^1.92.0"
     },
     "categories": [
         "Other",
@@ -46,8 +45,7 @@
         "typescript": "^5.4.5"
     },
     "dependencies": {
-        "@sinclair/typebox": "^0.33.7",
-        "@types/eslint": "^9.6.1"
+        "@sinclair/typebox": "^0.33.7"
     },
     "prettier": {
         "trailingComma": "none",
